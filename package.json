@@ -1,8 +1,9 @@
 {
-  "name": "discord.js-framework",
+  "name": "@koreanpanda/discord.js-framework",
   "version": "1.0.0",
   "description": "A framework for Discord.js",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.js",
   "scripts": {
     "test": "jest --config jestconfig.json",
     "build": "npx tsc",
