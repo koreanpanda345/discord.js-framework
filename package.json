@@ -41,5 +41,13 @@
   ],
   "dependencies": {
     "ascii-table": "0.0.9"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/koreanpanda345/discord.js-framework.git"
+  },
+  "bugs": {
+    "url": "https://github.com/koreanpanda345/discord.js-framework/issues"
+  },
+  "homepage": "https://github.com/koreanpanda345/discord.js-framework#readme"
 }
