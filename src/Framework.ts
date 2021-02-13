@@ -71,9 +71,9 @@ export class Framework {
       if (Framework._config.useDefaultEvents) folders.push('defaults/commands');
 
       folders.forEach(async (x) => {
-        const events = readdirSync(`./lib/${x}`).filter((d) => d.endsWith('.js') || d.endsWith('.ts'));
+        const events = readdirSync(`${__dirname}/${x}`).filter((d) => d.endsWith('.js') || d.endsWith('.ts'));
         for (let file of events) {
-          await import(`./${x}/${file}`);
+          await import(`${__dirname}/${x}/${file}`);
         }
       });
       return resolve(true);
