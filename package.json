@@ -1,6 +1,6 @@
 {
   "name": "@koreanpanda/discord.js-framework",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A framework for Discord.js",
   "main": "lib/index.js",
   "types": "lib/index.d.js",

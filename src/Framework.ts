@@ -47,7 +47,7 @@ export class Framework {
   }
 
   public static addEvent(event: Event) {
-    if(Framework._events.has(event.name)) {
+    if (Framework._events.has(event.name)) {
       console.warn(`Event ${event.name} has already been loaded.`);
       return;
     }
