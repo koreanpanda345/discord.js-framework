@@ -1,7 +1,7 @@
 import { MessageEmbed } from 'discord.js';
 import { Framework } from '../../Framework';
 import { CommandContext } from '../../utils/CommandContext';
-
+export function dummy() {}
 // usage:
 // ${prefix}help
 // ${prefix}help (command name)

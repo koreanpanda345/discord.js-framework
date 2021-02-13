@@ -1,5 +1,5 @@
 import { Framework } from '../../Framework';
-
+export function dummy() {}
 console.log(`Attempting to load the ready event...`);
 if (
   (typeof Framework.config.useDefautlEvents === 'boolean' && Framework.config.useDefautlEvents) ||

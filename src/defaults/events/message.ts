@@ -4,6 +4,7 @@ import { CommandContext } from '../../utils/CommandContext';
 
 console.log('Attempting to loaded the message event...');
 
+export function dummy() {}
 if (
   (typeof Framework.config.useDefautlEvents === 'boolean' && Framework.config.useDefautlEvents) ||
   (typeof Framework.config.useDefautlEvents === 'object' && Framework.config.useDefautlEvents.message)
