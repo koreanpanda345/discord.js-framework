@@ -1,7 +1,7 @@
 import { MessageEmbed } from 'discord.js';
 import { Framework } from '../../Framework';
 import { CommandContext } from '../../utils/CommandContext';
-export function dummy() {}
+export function invoke() {
 // usage:
 // ${prefix}help
 // ${prefix}help (command name)
@@ -46,3 +46,5 @@ if (Framework.config.useDefautlEvents)
       ctx.sendMessage(embed);
     },
   });
+
+}

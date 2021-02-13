@@ -73,7 +73,7 @@ export class Framework {
       folders.forEach(async (x) => {
         const events = readdirSync(`${__dirname}/${x}`).filter((d) => d.endsWith('.js') || d.endsWith('.ts'));
         for (let file of events) {
-          await import(`${__dirname}/${x}/${file}`);
+          (await import(`${__dirname}/${x}/${file}`)).invoke();
         }
       });
       return resolve(true);
