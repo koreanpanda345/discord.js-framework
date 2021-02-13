@@ -4,7 +4,6 @@
   "description": "A framework for Discord.js",
   "main": "index.js",
   "scripts": {
-    "test-live": "ts-node test/index.ts",
     "test": "jest --config jestconfig.json",
     "build": "npx tsc",
     "format": "prettier --write \"src/**/*.ts\"",
