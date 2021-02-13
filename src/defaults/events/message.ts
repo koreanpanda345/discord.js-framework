@@ -13,26 +13,27 @@ export function invoke() {
       name: 'message',
       invoke: async (message: Message) => {
         const config = Framework.config;
-  
-        if ((config.ignore?.bots && message.author.bot) || (config.ignore?.dms && message.channel.type === 'dm')) return;
-  
+
+        if ((config.ignore?.bots && message.author.bot) || (config.ignore?.dms && message.channel.type === 'dm'))
+          return;
+
         const prefix = Framework.config.prefix!;
         if (config.caseSensitive && !message.content.startsWith(prefix)) return;
         else if (!config.caseSensitive && !message.content.toLowerCase().startsWith(prefix)) return;
         const args = message.content.slice(prefix.length).trim().split(/ +/g);
-  
+
         const ctx = new CommandContext(message, args);
-  
+
         const commandName = args.shift()!.toLowerCase();
-  
+
         const command =
           Framework.commands.get(commandName) ||
           Framework.commands.find((cmd) => cmd.aliases! && cmd.aliases?.includes(commandName));
-  
+
         if (!command) return;
-  
+
         let run = true;
-  
+
         command.permissions?.user?.forEach((permission) => {
           if (!ctx.member?.hasPermission(permission)) {
             run = false;
@@ -43,7 +44,7 @@ export function invoke() {
           }
         });
         if (!run) return;
-  
+
         command.permissions?.self?.forEach((permission) => {
           if (!ctx.me?.hasPermission(permission)) {
             run = false;
@@ -54,10 +55,10 @@ export function invoke() {
           }
         });
         if (!run) return;
-  
+
         command.preconditions?.forEach(async (condition) => {
           const result = await condition(ctx);
-  
+
           if (typeof result === 'boolean' && !result) {
             run = false;
             ctx.sendMessage(`Something Happened`);
@@ -74,9 +75,9 @@ export function invoke() {
             return;
           }
         });
-  
+
         if (!run) return;
-  
+
         try {
           await command.invoke(ctx);
         } catch (error) {
@@ -85,4 +86,3 @@ export function invoke() {
       },
     });
 }
-
